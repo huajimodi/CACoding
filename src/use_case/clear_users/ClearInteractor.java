@@ -1,6 +1,18 @@
 package use_case.clear_users;
 
-// TODO Complete me
+import data_access.FileUserDataAccessObject;
 
-public class ClearInteractor {
+public class ClearInteractor implements ClearInputBoundary{
+
+    final ClearUserDataAccessInterface clearUserDataAccessObject;
+
+    public ClearInteractor(ClearUserDataAccessInterface clearUserDataAccessObject) {
+        this.clearUserDataAccessObject = clearUserDataAccessObject;
+    }
+
+
+    @Override
+    public void execute() {
+        clearUserDataAccessObject.clearAllUsers();
+    }
 }
